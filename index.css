@@ -1,0 +1,132 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.lightTheme {
+  --background-color-1: #F1F8F4;
+  --background-color-2: #D6EADF;
+  --text-color: #285238;
+}
+
+.darkTheme {
+  --background-color-1: #285238;
+  --background-color-2: #366D4B;
+  --text-color: #F1F8F4;
+}
+
+html {
+  font-size: 17px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  min-height: 100vh;
+  overflow: auto;
+  color: var(--text-color);
+}
+
+#sidebar {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: var(--background-color-2);
+}
+
+#topbar {
+  flex: 0 1 auto;
+  display: none;
+  flex-direction: row;
+  padding: 1rem;
+  background-color: var(--background-color-2);
+}
+
+#content {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 2rem;
+  background-color: var(--background-color-1);
+}
+
+#sidebarResumePicture {
+  width: 100%;
+  height: auto;
+  max-height: 240px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--background-color-1);
+  border-radius: 50%;
+}
+
+#topbarResumePicture {
+  width: max(22%, 144px);
+  height: auto;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--background-color-1);
+  border-radius: 50%;
+}
+
+a {
+  color: var(--text-color);
+  opacity: 80%;
+}
+
+li {
+  margin-block: 0.25rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: var(--background-color-2);
+  border-radius: 1rem;
+  box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.1), 0px 4px 5px -2px rgba(0, 0, 0, 0.12), 0px 10px 15px -5px rgba(0, 0, 0, 0.2);
+}
+
+.visibleInSmall {
+  display: none;
+}
+
+.card h1 {
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
+}
+
+
+@media screen and (max-width: 720px) {
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    flex-direction: column;
+  }
+
+  #sidebar {
+    display: none;
+  }
+
+  #topbar {
+    display: flex;
+  }
+
+  .visibleInSmall {
+    display: flex;
+  }
+
+  .card {
+    text-align: center;
+  }
+
+}
